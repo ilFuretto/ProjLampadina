@@ -1,0 +1,2 @@
+# ProjLampadina
+simulazione lampadina c#
