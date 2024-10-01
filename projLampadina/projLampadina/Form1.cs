@@ -1,7 +1,12 @@
+using System.Windows.Forms;
+
 namespace projLampadina
 {
     public partial class Form1 : Form
     {
+        private bool bottonePremuto = false;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -27,11 +32,56 @@ namespace projLampadina
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void bottoneGiu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bottoneSu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private async void spostaImmagine(int direction)
+        {
+            bottonePremuto = true;
+            while (bottonePremuto)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + direction);
+                pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y + direction);
+
+                await Task.Delay(50);
+            }
+        }
+
+        private void bottoneGiu_MouseDown(object sender, MouseEventArgs e)
+        {
+            spostaImmagine(1);
+        }
+
+        private void bottoneSu_MouseDown(object sender, MouseEventArgs e)
+        {
+            spostaImmagine(-1);
+        }
+
+        private void bottone_MouseUp(object sender, MouseEventArgs e)
+        {
+            bottonePremuto = false;
+        }
+
+        private void RESET_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Location = new Point(371, 153);
+            pictureBox2.Location = new Point(371, 153);
 
         }
     }
