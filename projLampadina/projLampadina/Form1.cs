@@ -54,7 +54,7 @@ namespace projLampadina
         private async void spostaImmagine(int direction)
         {
             bottonePremuto = true;
-            while (bottonePremuto)
+            while (bottonePremuto&&(pictureBox1.Top>0&&pictureBox1.Bottom < this.ClientSize.Height) &&(pictureBox2.Top > 0 && pictureBox2.Bottom < this.ClientSize.Height))
             {
                 pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + direction);
                 pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y + direction);
