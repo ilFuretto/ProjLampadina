@@ -14,6 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = projLampadina
-build_property.ProjectDir = C:\Users\admin\Desktop\Lampadina\ProjLampadina\projLampadina\projLampadina\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\colombo.21191\projLampadina\ProjLampadina\projLampadina\projLampadina\

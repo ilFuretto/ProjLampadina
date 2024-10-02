@@ -6,7 +6,7 @@ namespace projLampadina
     {
         private bool bottonePremuto = false;
 
-
+        //aaaa
         public Form1()
         {
             InitializeComponent();
