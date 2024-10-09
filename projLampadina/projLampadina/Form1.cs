@@ -4,12 +4,14 @@ namespace projLampadina
 {
     public partial class Form1 : Form
     {
-        private bool bottonePremuto = false;
+        bool bottonePremuto=false;
+        private Lampadina lampadina;
 
-        //aaaa
         public Form1()
         {
             InitializeComponent();
+            lampadina = new Lampadina();
+            lampadina.Posizione = 153; // Imposta posizione iniziale
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,50 +29,18 @@ namespace projLampadina
         {
             pictureBox2.Visible = false;
             pictureBox1.Visible = true;
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bottoneGiu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bottoneSu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private async void spostaImmagine(int direction)
-        {
-            bottonePremuto = true;
-            while (bottonePremuto&&(pictureBox1.Top+direction>=0&&pictureBox1.Bottom+direction <= this.ClientSize.Height)&&(pictureBox2.Top+direction >= 0 && pictureBox2.Bottom+direction <= this.ClientSize.Height))
-            {
-                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + direction);
-                pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y + direction);
-
-                await Task.Delay(50);
-            }
         }
 
         private void bottoneGiu_MouseDown(object sender, MouseEventArgs e)
         {
-            spostaImmagine(1);
+            lampadina.Abbassa();
+            AggiornaPosizione();
         }
 
         private void bottoneSu_MouseDown(object sender, MouseEventArgs e)
         {
-            spostaImmagine(-1);
+            lampadina.Alza();
+            AggiornaPosizione();
         }
 
         private void bottone_MouseUp(object sender, MouseEventArgs e)
@@ -80,9 +50,14 @@ namespace projLampadina
 
         private void RESET_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(371, 153);
-            pictureBox2.Location = new Point(371, 153);
+            lampadina.Posizione = 153; // Reset posizione
+            AggiornaPosizione();
+        }
 
+        private void AggiornaPosizione()
+        {
+            pictureBox1.Location = new Point(371, lampadina.Posizione);
+            pictureBox2.Location = new Point(371, lampadina.Posizione);
         }
     }
 }

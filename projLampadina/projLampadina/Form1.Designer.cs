@@ -92,7 +92,6 @@
             bottoneSu.TabIndex = 5;
             bottoneSu.Text = "ALZA";
             bottoneSu.UseVisualStyleBackColor = true;
-            bottoneSu.Click += bottoneSu_Click;
             bottoneSu.MouseDown += bottoneSu_MouseDown;
             bottoneSu.MouseUp += bottone_MouseUp;
             // 
@@ -105,7 +104,6 @@
             bottoneGiu.TabIndex = 6;
             bottoneGiu.Text = "ABBASSA";
             bottoneGiu.UseVisualStyleBackColor = true;
-            bottoneGiu.Click += bottoneGiu_Click;
             bottoneGiu.MouseDown += bottoneGiu_MouseDown;
             bottoneGiu.MouseUp += bottone_MouseUp;
             // 
@@ -140,6 +138,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
