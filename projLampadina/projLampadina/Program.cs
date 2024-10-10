@@ -21,7 +21,7 @@ namespace projLampadina
         {
             Accesa = true;
         }
-
+      
         public void Spegni()
         {
             Accesa = false;
@@ -29,12 +29,12 @@ namespace projLampadina
 
         public void Alza()
         {
-            Posizione -= 5; // Sposta verso l'alto
+            Posizione -= 5;
         }
 
         public void Abbassa()
         {
-            Posizione += 5; // Sposta verso il basso
+            Posizione += 5;
         }
     }
     internal static class Program
